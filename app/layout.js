@@ -1,6 +1,6 @@
 import { Montserrat } from "next/font/google";
-import Link from "next/link";
-
+import './global.css'
+import Navbar from "@/components/Navbar";
 
 export const metadata = {
   title: 'VacunasApp',
@@ -19,16 +19,11 @@ export default function RootLayout({ children }) {
     <html lang="en">
 
       <body className={monserrat.className}>
-        <ul>
-          <li>
-            <Link href="/">home</Link>
-          </li>
-          <li>
-            <Link href="/fetch">post</Link>
-          </li>
-        </ul>
-
-        {children}</body>
+        <Navbar></Navbar>
+        <div className="container mx-auto h-screen">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
